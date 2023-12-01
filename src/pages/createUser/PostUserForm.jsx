@@ -3,7 +3,10 @@ import { ApiService } from '../../service'
 
 const PostUserForm = () => {
 
-  const [form, setForm] = useState({})
+  const [form, setForm] = useState({
+    name: '',
+    job: ''
+  })
 
   const handleChange = (e) => {
     setForm({
@@ -12,16 +15,16 @@ const PostUserForm = () => {
 
     })
   }
- const handleSubmit =(e)=>{
-  e.preventDefault()
-  ApiService.create(form)
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    ApiService.create(form)
 
- }
+  }
 
   return (
     <>
       <div>Creando usuarios mediante un formulario</div>
-      <form  onSubmit={handleSubmit}   className="container">
+      <form onSubmit={handleSubmit} className="container">
         <div className="header">
           <div className="text">Create your user</div>
           {/* <div className="underline"></div> */}
